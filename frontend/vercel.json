@@ -20,6 +20,6 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://seu-backend.railway.app"
+    "REACT_APP_API_URL": "https://soverdadeiro-production.up.railway.app"
   }
 }
