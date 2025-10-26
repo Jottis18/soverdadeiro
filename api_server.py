@@ -12,11 +12,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from SchedulerNoGUI import SchedulerSimulator, Process
 
 app = Flask(__name__)
-CORS(app, 
-     origins=["https://trabalho-so-ufc.vercel.app", "http://localhost:3000", "http://localhost:3001"],
-     methods=["GET", "POST", "OPTIONS"],
-     allow_headers=["Content-Type", "Authorization"],
-     supports_credentials=True)
+CORS(app, origins="*")
 
 # Instância global do simulador
 simulator = SchedulerSimulator()
