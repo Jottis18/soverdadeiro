@@ -17,6 +17,18 @@ CORS(app, origins="*")
 # Instância global do simulador
 simulator = SchedulerSimulator()
 
+# Decorator para adicionar headers CORS manualmente
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    return response
+
+# Aplicar o decorator a todas as respostas
+@app.after_request
+def after_request(response):
+    return add_cors_headers(response)
+
 @app.route('/api/simulate', methods=['POST'])
 def simulate():
     try:
