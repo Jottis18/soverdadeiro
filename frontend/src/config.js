@@ -1,5 +1,5 @@
 // Configuração da API
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://soverdadeiro-production-1f46.up.railway.app';
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 // Debug: log da configuração
 console.log('🔧 Config API - REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
