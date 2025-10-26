@@ -3,6 +3,7 @@ import ProcessInput from './components/ProcessInput';
 import AlgorithmSelector from './components/AlgorithmSelector';
 import ResultsDisplay from './components/ResultsDisplay';
 import DiagramViewer from './components/DiagramViewer';
+import DebugInfo from './components/DebugInfo';
 import { Cpu, BarChart3, Clock, Settings } from 'lucide-react';
 import { API_ENDPOINTS } from './config';
 import './App.css';
@@ -143,6 +144,7 @@ function App() {
 
   return (
     <div className="app">
+      <DebugInfo />
       <header className="app-header">
         <div className="header-content">
           <div className="header-title">
