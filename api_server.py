@@ -17,9 +17,22 @@ CORS(app, origins=["https://trabalho-so-ufc.vercel.app", "http://localhost:3000"
 # Instância global do simulador
 simulator = SchedulerSimulator()
 
-@app.route('/api/simulate', methods=['POST'])
+@app.route('/api/simulate', methods=['GET', 'POST'])
 def simulate():
     try:
+        if request.method == 'GET':
+            # Para requisições GET, retorna informações sobre o endpoint
+            return jsonify({
+                'message': 'Endpoint de simulação de escalonamento',
+                'methods': ['POST'],
+                'description': 'Use POST para executar simulações',
+                'example': {
+                    'processes': [{'creationTime': 0, 'duration': 3, 'priority': 1}],
+                    'algorithm': 'FCFS',
+                    'config': {'quantum': 2, 'aging': 1}
+                }
+            })
+        
         data = request.get_json()
         
         # Extrai dados da requisição
